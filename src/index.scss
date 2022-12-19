@@ -1,0 +1,17 @@
+@import "./themes/colors.scss";
+
+* {
+    box-sizing: border-box;
+    font-family: "Manrope", "Trebuchet MS", sans-serif !important;
+}
+
+html {
+    font-size: 10px; // sets 1 rem = 10px instead of 16px
+    
+    body {
+        background-color: $purple;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+}

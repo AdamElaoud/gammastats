@@ -1,0 +1,36 @@
+@import "../../themes/colors.scss";
+
+.stat-display {
+    background-color: $navy;
+    border-radius: 1rem;
+    color: $offWhite;
+    margin: 0.5rem;
+    overflow: hidden;
+    width: 45%;
+
+    &.blank {
+        background-color: transparent;
+
+        .title {
+            background-color: transparent;
+        }
+    }
+
+    .title {
+        background-color: $offWhite;
+        color: $darkPurple;
+        font-size: 1.35rem;
+        font-weight: bold;
+        margin-bottom: 0.25rem;
+        padding: 0.1rem;
+        text-align: center;
+    }
+    
+    .boosts {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+        font-style: italic;
+    }
+}

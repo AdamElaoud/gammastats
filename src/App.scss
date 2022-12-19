@@ -1,0 +1,71 @@
+@import "./themes/colors.scss";
+
+.app {
+    align-items: center;
+    color: $offWhite;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    position: relative;
+    width: 100vw;
+
+    justify-content: center;
+
+    background-color: $purple;
+
+    @media (min-width: 768px) {
+        max-width: 768px;
+    }
+
+    .header {
+        align-items: center;
+        background-color: $navy;
+        display: flex;
+        font-size: 2rem;
+        font-weight: bold;
+        height: 6rem;
+        padding: 0.75rem;
+        position: absolute;
+        top: 0;
+        width: 100vw;
+
+        .logo {
+            height: 3.5rem;
+            margin-right: 1rem;
+            width: 3.5rem;
+        }
+
+        .header-button {
+            text-decoration: none;
+            position: absolute;
+            right: 1rem;
+        }
+        
+        .header-icon {
+            margin-right: 0.5rem;
+        }
+    }
+
+    .stat-inputs {
+        display: flex;
+        margin-bottom: 5rem;
+        margin-top: -2rem;
+    }
+
+    .stat-displays {
+        display: flex;
+        height: 25%;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .tab-buttons {
+        display: flex;
+        background-color: $navy;
+        bottom: 0;
+        justify-content: center;
+        position: absolute;
+        width: 100vw;
+    }
+}

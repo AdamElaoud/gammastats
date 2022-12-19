@@ -1,0 +1,17 @@
+@import "../../themes/colors.scss";
+
+.button {
+    align-items: center;
+    background-color: $purple;
+    border: none;
+    border-radius: 0.75rem;
+    color: $offWhite;
+    display: flex;
+    font-size: 1.25rem;
+    padding: 0.15rem 0.5rem;
+    text-align: center;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
