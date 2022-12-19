@@ -49,8 +49,31 @@
 
     .stat-inputs {
         display: flex;
-        margin-bottom: 5rem;
         margin-top: -2rem;
+    }
+    
+    .message-box {
+        border-radius: 0.75rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        height: 3rem;
+        margin-bottom: 1.5rem;
+        margin-top: 1rem;
+        padding-bottom: 0.25rem;
+        padding-top: 0.25rem;
+        text-align: center;
+        width: 80%;
+
+        &.warning {
+            background-color: $lightGold;
+            border: 2px solid $gold;
+            color: #000000;
+        }
+
+        &.error {
+            background-color: $lightError;
+            border: 2px solid $error;
+        }
     }
 
     .stat-displays {

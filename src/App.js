@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from './components/button/Button';
 import { 
     MAX_SELFISH_AGILITY,
     MAX_SELFISH_INTELLECT,
     MAX_SELFISH_POWER,
     MAX_SELFISH_STRENGTH,
-    MAX_SELFISH_WILL
+    MAX_SELFISH_WILL,
+    MAX_TOTAL
 } from "./util/constants";
 import Icon from './components/icon/Icon';
 import logo from "./images/gamma.png";
@@ -22,6 +23,32 @@ function App() {
     const [will, setWill] = useState(250);
 
     const [page, setPage] = useState("Base");
+
+    const [showWarning, setShowWarning] = useState(true);
+
+    // derive error
+    let message, messageClass;
+    if (agility + intellect + power + strength + will > MAX_TOTAL) {
+        message = "Your stat total is too high!";
+        messageClass = "error";
+    
+    } else if (showWarning) {
+        message = "Enter your pet's stats above!";
+        messageClass = "warning";
+    
+    } else {
+        message = messageClass = "";
+    }
+
+    // on first load, check if warning should be shown
+    useEffect(() => {
+        const wasWarned = localStorage.getItem("warned");
+        if (wasWarned)
+            setShowWarning(false);
+
+        localStorage.setItem("warned", "true");
+    
+    }, []);
 
     return (
         <div className = "app">
@@ -42,6 +69,10 @@ function App() {
                 <StatInput icon = "agility" stat = {agility} setStat = {setAgility} max = {MAX_SELFISH_AGILITY} />
                 <StatInput icon = "will" stat = {will} setStat = {setWill} max = {MAX_SELFISH_WILL} />
                 <StatInput icon = "power" stat = {power} setStat = {setPower} max = {MAX_SELFISH_POWER} />
+            </div>
+
+            <div className = {`message-box ${messageClass}`}>
+                {message}
             </div>
 
             <div className = "stat-displays">

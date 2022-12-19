@@ -1,9 +1,12 @@
 import PropTypes from "prop-types";
+import { useRef } from "react";
 import Icon from "../icon/Icon";
 import "./StatInput.scss";
 
 export default function StatInput(props) {
     const { icon, max, setStat, stat } = props;
+
+    const inputRef = useRef();
 
     const onInput = (event) => {
         const { value, validity } = event.target;
@@ -12,12 +15,17 @@ export default function StatInput(props) {
         // invalid if empty or includes "-" symbol (minimum is 0)
         if (valid)
             setStat(parseInt(value));
+        else if (value === "") {
+            setStat(0);
+            inputRef.current.focus();
+            inputRef.current.select();
+        }
     }
 
     return (
         <div className = "stat-input">
             <Icon icon = {icon} size = "lg"/>
-            <input className = "stat-input-data" required onInput = {onInput} value = {stat} type = "number" min = "0" max = {max}/>
+            <input id = {icon} ref = {inputRef} className = "stat-input-data" required onInput = {onInput} value = {stat} type = "number" min = "0" max = {max}/>
         </div>
     );
 }
