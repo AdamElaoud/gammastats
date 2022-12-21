@@ -1,15 +1,14 @@
 .stat-row {
     display: flex;
     font-size: 1.15rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin: 0.25rem 1rem;
     position: relative;
 
     .stat-title {
-
     }
-
+    
     .stat-data {
+        font-weight: bold;
         align-items: center;
         display: flex;
         position: absolute;

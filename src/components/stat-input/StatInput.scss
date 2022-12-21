@@ -1,7 +1,11 @@
 .stat-input {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    width: 15%;
+
     .stat-input-data {
         border: none;
         border-radius: 1rem;
@@ -9,6 +13,7 @@
         font-weight: bold;
         margin: 0.5rem 0.75rem;
         text-align: center;
+        max-width: 100%;
     
         &:focus {
             outline: none;
