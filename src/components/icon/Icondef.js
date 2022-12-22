@@ -1,5 +1,7 @@
 import {
     faCalendarDays,
+    faCaretDown,
+    faCaretUp,
     faCompress,
     faEllipsisVertical,
     faExpand,
@@ -40,6 +42,7 @@ export const FontAwesomeIconDefs = {
     "collapse": faCompress,
     "dashboard": faTrello,
     "discord": faDiscord,
+    "down": faCaretDown,
     "expand": faExpand,
     "eye": faEye,
     "eyeSlashed": faEyeSlash,
@@ -48,6 +51,7 @@ export const FontAwesomeIconDefs = {
     "plus": faPlus,
     "profile": faUser,
     "tripleDot": faEllipsisVertical,
+    "up": faCaretUp
 };
 
 export const ImageIconDefs = {

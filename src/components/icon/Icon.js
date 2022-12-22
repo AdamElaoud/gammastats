@@ -4,7 +4,7 @@ import { FontAwesomeIconDefs, ImageIconDefs } from "./Icondef";
 import "./Icon.scss";
 
 export default function Icon(props) {
-    const { className, icon, size } = props;
+    const { className, icon, size, ...options } = props;
     
     let isFontAwesomeIcon = true;
     let iconDef = FontAwesomeIconDefs[icon];
@@ -19,17 +19,18 @@ export default function Icon(props) {
 
     if (!isFontAwesomeIcon) {
         return (
-            <img alt = "icon" className = {classes} src = {iconDef} />
+            <img {...options} alt = "icon" className = {classes} src = {iconDef} />
           );   
     }
 
     return (
-        <FontAwesomeIcon className = {classes} icon = {iconDef} />
+        <FontAwesomeIcon {...options} className = {classes} icon = {iconDef} />
     );
 }
 
 Icon.propTypes = {
     className: PropTypes.string,
     icon: PropTypes.oneOf([...Object.keys(FontAwesomeIconDefs), ...Object.keys(ImageIconDefs)]).isRequired,
+    onClick: PropTypes.func,
     size: PropTypes.oneOf(["sm", "md", "lg"])
 }

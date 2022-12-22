@@ -22,10 +22,26 @@ export default function StatInput(props) {
         }
     }
 
+    const incrementStat = () => {
+        if (stat < max)
+            setStat(val => val + 1);
+    };
+
+    const decrementStat = () => {
+        if (stat > 0)
+            setStat(val => val - 1);
+    };
+
     return (
         <div className = "stat-input">
             <Icon icon = {icon} size = "lg"/>
-            <input id = {icon} ref = {inputRef} className = "stat-input-data" required onInput = {onInput} value = {stat} type = "number" min = "0" max = {max}/>
+            <div className = "data">
+                <input id = {icon} ref = {inputRef} className = "input" required onInput = {onInput} value = {stat} type = "number" min = "0" max = {max}/>
+                <div className = "arrows">
+                    <Icon className = "up" onClick = {incrementStat} icon = "up" size = "md" />
+                    <Icon className = "down" onClick = {decrementStat} icon = "down" size = "md" />
+                </div>
+            </div>
         </div>
     );
 }

@@ -1,15 +1,24 @@
+export const sumData = (formulas, agility, intellect, power, strength, will) => {
+    const total =  formulas.reduce((total, formula) => {
+        return total + formula(agility, intellect, power, strength, will);
+    }, 0);
+
+    return total.toFixed(2);
+};
+
 // DAMAGE
 export const dealer = (_, __, power, strength, will) => ((2 * strength) + (2 * will) + power) * 3 / 400;
 export const giver = (_, __, power, strength, will) => ((2 * strength) + (2 * will) + power) / 200;
 export const boon = (_, __, power, strength, will) => ((2 * strength) + (2 * will) + power) / 400;
 export const damage = [
-    { title: "Dealer", func: dealer, icon: "damage", icon: "damage" },
+    { title: "Dealer", func: dealer, icon: "damage" },
     { title: "Giver", func: giver, icon: "damage" },
     { title: "Boon", func: boon, icon: "damage" },
     { title: "Pain-Giver", func: giver, icon: "damage" },
     { title: "Pain-Bringer", func: boon, icon: "damage" },
     "DAMAGE",
-    ["strength", "will"]
+    ["strength", "will"],
+    { title:  "Total", funcs: [dealer, giver, boon, giver, boon], icon: "damage" }
 ];
 
 // RESIST
@@ -23,7 +32,8 @@ export const resist = [
     { title: "Spell-Proof", func: proof, icon: "resist" },
     { title: "Spell-Defying", func: defy, icon: "resist" },
     "RESIST",
-    ["agility", "strength"]
+    ["agility", "strength"],
+    { title:  "Total", funcs: [ward, proof, defy, proof, defy], icon: "resist" }
 ];
 
 // ACCURACY
@@ -37,7 +47,8 @@ export const accuracy = [
     { title: "Sharp-Shot", func: shot, icon: "accuracy" },
     { title: "Sharp-Eye", func: eye, icon: "accuracy" },
     "ACCURACY",
-    ["agility", "intellect"]
+    ["agility", "intellect"],
+    { title:  "Total", funcs: [sniper, shot, eye, shot, eye], icon: "accuracy" }
 ];
 
 // PIERCE
@@ -47,7 +58,8 @@ export const pierce = [
     { title: "Armor Breaker", func: breaker, icon: "pierce" },
     { title: "Armor Piercer", func: piercer, icon: "pierce" },
     "PIERCE",
-    ["agility", "strength"]
+    ["agility", "strength"],
+    { title:  "Total", funcs: [breaker, piercer], icon: "pierce" }
 ];
 
 // CRITICAL
@@ -61,7 +73,8 @@ export const critical = [
     { title: "Critical Striker", func: cStriker, icon: "crit" },
     { title: "Critical Hitter", func: hitter, icon: "crit" },
     "CRITICAL",
-    ["agility", "will"]
+    ["agility", "will"],
+    { title:  "Total", funcs: [assailant, sStriker, cStriker, hitter], icon: "crit" }
 ];
 
 // BLOCK
@@ -71,7 +84,8 @@ export const block = [
     { title: "Defender", func: defender, icon: "block" },
     { title: "Blocker", func: blocker, icon: "block" },
     "BLOCK",
-    ["intellect", "will"]
+    ["intellect", "will"],
+    { title:  "Total", funcs: [defender, blocker], icon: "block" }
 ];
 
 // PIP CONVERSION
@@ -81,7 +95,8 @@ export const pipConversion = [
     { title: "Pip Conserver", func: conserver, icon: "pipconvert" },
     { title: "Pip Saver", func: saver, icon: "pipconvert" },
     "PIP CONVERST",
-    ["agility", "will"]
+    ["agility", "will"],
+    { title:  "Total", funcs: [conserver, saver], icon: "pipconvert" }
 ];
 
 // PIP CHANCE
@@ -91,7 +106,8 @@ export const pips = [
     { title: "Pip 'O Plenty", func: pipOPlenty, icon: "pip" },
     { title: "Pip Boost", func: pipBoost, icon: "pip" },
     "PIPS",
-    ["intellect", "strength"]
+    ["intellect", "strength"],
+    { title:  "Total", funcs: [pipOPlenty, pipBoost], icon: "pip" }
 ];
 
 // INCOMING
@@ -101,7 +117,8 @@ export const incoming = [
     { title: "Lively", func: lively, icon: ["incoming", "heart"] },
     { title: "Healthy", func: healthy, icon: ["incoming", "heart"] },
     "INCOMING",
-    ["strength", "will"]
+    ["strength", "will"],
+    { title:  "Total", funcs: [lively, healthy], icon: "heart" }
 ];
 
 // OUTGOING
@@ -111,7 +128,8 @@ export const outgoing = [
     { title: "Medic", func: medic, icon: ["outgoing", "heart"]},
     { title: "Healer", func: healer, icon: ["outgoing", "heart"]},
     "OUTGOING",
-    ["strength", "will"]
+    ["strength", "will"],
+    { title:  "Total", funcs: [medic, healer], icon: ["outgoing", "heart"] }
 ];
 
 // HEALTH
@@ -125,7 +143,8 @@ export const health = [
     { title: "Health Boost", func: healthBoost, icon: "health" },
     { title: "Health Add", func: add, icon: "health" },
     "HEALTH",
-    ["agility", "will"]
+    ["agility", "will"],
+    { title:  "Total", funcs: [healthBounty, healthGift, healthBoost, add], icon: "health" }
 ];
 
 // MANA
@@ -139,7 +158,8 @@ export const mana = [
     { title: "Mana Boost", func: manaBoost, icon: "mana" },
     { title: "Extra Mana", func: extra, icon: "mana" },
     "MANA",
-    ["agility", "will"]
+    ["agility", "will"],
+    { title:  "Total", funcs: [manaBounty, manaGift, manaBoost, extra], icon: "mana" }
 ];
 
 // STUN RESIST
@@ -149,7 +169,8 @@ export const stunResist = [
     { title: "Stun Recalcitrant", func: recalcitrant, icon: "stunresist" },
     { title: "Stun Resistant", func: resistant, icon: "stunresist" },
     "STUN RESIST",
-    ["intellect", "strength"]
+    ["intellect", "strength"],
+    { title:  "Total", funcs: [recalcitrant, resistant], icon: "stunresist" }
 ];
 
 // FISH LUCK
@@ -159,5 +180,6 @@ export const fishLuck = [
     { title: "Epic Fish Luck", func: epicLuck, icon: "fishluck" },
     { title: "Fish Luck", func: luck, icon: "fishluck" },
     "FISH LUCK",
-    ["intellect", "will"]
+    ["intellect", "will"],
+    { title:  "Total", funcs: [epicLuck, luck], icon: "fishluck" }
 ];

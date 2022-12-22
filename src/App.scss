@@ -50,7 +50,7 @@
     .stat-inputs {
         display: flex;
         justify-content: center;
-        margin-top: -2rem;
+        margin-top: -0.5rem;
         width: 100%;
     }
     
@@ -59,8 +59,8 @@
         font-size: 1.5rem;
         font-weight: bold;
         height: 3rem;
-        margin-bottom: 1.5rem;
-        margin-top: 1rem;
+        margin-bottom: 0.75rem;
+        margin-top: 0.75rem;
         padding-bottom: 0.25rem;
         padding-top: 0.25rem;
         text-align: center;
@@ -80,8 +80,9 @@
 
     .stat-displays {
         display: flex;
-        height: 25%;
+        height: 30%;
         justify-content: center;
+        margin-bottom: 0.25rem;
         width: 100%;
     }
 

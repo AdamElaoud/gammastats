@@ -1,22 +1,64 @@
+@import "../../themes/colors.scss";
+
+input[type = number]::-webkit-inner-spin-button, 
+input[type = number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    display: none;
+}
+
 .stat-input {
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    width: 15%;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    width: 17%;
 
-    .stat-input-data {
-        border: none;
-        border-radius: 1rem;
-        font-size: 2rem;
-        font-weight: bold;
-        margin: 0.5rem 0.75rem;
-        text-align: center;
-        max-width: 100%;
+    .data {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+
+        .input {
+            border: none;
+            border-radius: 1rem;
+            font-size: 1.65rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            margin-top: 0.5rem;
+            margin-right: 0.15rem;
+            text-align: center;
+            max-width: 60%;
+        
+            &:focus {
+                outline: none;
+            }
+        }
     
-        &:focus {
-            outline: none;
+        .arrows {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .icon {
+                color: $navy;
+                padding: 0;
+
+                &:hover {
+                    cursor: pointer;
+                    color: $gold;
+                }
+            }
+
+            .up {
+                margin-bottom: -0.35rem;
+            }
+
+            .down {
+                margin-top: -0.35rem;
+            }
         }
     }
+
 }

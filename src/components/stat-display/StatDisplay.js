@@ -1,5 +1,21 @@
 import PropTypes from "prop-types";
-import { accuracy, block, critical, damage, fishLuck, health, incoming, mana, outgoing, pierce, pipConversion, pips, resist, stunResist } from "../../util/formulas";
+import {
+    accuracy,
+    block,
+    critical,
+    damage,
+    fishLuck,
+    health,
+    incoming,
+    mana,
+    outgoing,
+    pierce,
+    pipConversion,
+    pips,
+    resist,
+    stunResist,
+    sumData
+} from "../../util/formulas";
 import Icon from "../icon/Icon";
 import StatRow from "./StatRow";
 import "./StatDisplay.scss";
@@ -16,6 +32,7 @@ export default function StatDisplay(props) {
 
     const quadrantData = QUADRANT_CONTENT[quadrant];
     const stats = [...quadrantData[page]];
+    const total = stats.pop();
     const boosts = stats.pop();
     const title = stats.pop();
 
@@ -37,6 +54,10 @@ export default function StatDisplay(props) {
             </div>}
 
             {stats.map(({title, func, icon}) => <StatRow key = {title} data = {func(agility, intellect, power, strength, will)} icon = {icon} title = {title}/>)}
+
+            {!isBlank && <div className = "total">
+                <StatRow data = {sumData(total.funcs, agility, intellect, power, strength, will)} icon = {total.icon} title = {total.title}/>
+            </div>}
         </div>
     );
 }
