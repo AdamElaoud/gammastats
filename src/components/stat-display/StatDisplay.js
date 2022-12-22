@@ -53,7 +53,7 @@ export default function StatDisplay(props) {
                 <Icon icon = {boosts[1]} size = "sm"/>
             </div>}
 
-            {stats.map(({title, func, icon}) => <StatRow key = {title} data = {func(agility, intellect, power, strength, will)} icon = {icon} title = {title}/>)}
+            {stats.map(({title, func, icon}) => <StatRow key = {title} data = {func(agility, intellect, power, strength, will).toFixed(2)} icon = {icon} title = {title}/>)}
 
             {!isBlank && <div className = "total">
                 <StatRow data = {sumData(total.funcs, agility, intellect, power, strength, will)} icon = {total.icon} title = {total.title}/>
