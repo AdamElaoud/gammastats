@@ -94,7 +94,7 @@ export const saver = (agility, _, power, __, will) => ((2 * agility) + (2 * will
 export const pipConversion = [
     { title: "Pip Conserver", func: conserver, icon: "pipconvert" },
     { title: "Pip Saver", func: saver, icon: "pipconvert" },
-    "PIP CONVERST",
+    "PIP CONVERT",
     ["agility", "will"],
     { title:  "Total", funcs: [conserver, saver], icon: "pipconvert" }
 ];
