@@ -1,10 +1,15 @@
 import { useEffect, useState } from "react";
 import Button from './components/button/Button';
 import { 
+    MAX_BASE_AGILITY,
     MAX_SELFISH_AGILITY,
+    MAX_BASE_INTELLECT,
     MAX_SELFISH_INTELLECT,
+    MAX_BASE_POWER,
     MAX_SELFISH_POWER,
+    MAX_BASE_STRENGTH,
     MAX_SELFISH_STRENGTH,
+    MAX_BASE_WILL,
     MAX_SELFISH_WILL,
     MAX_TOTAL
 } from "./util/constants";
@@ -16,11 +21,11 @@ import TabButton from "./components/tabs/TabButton";
 import './App.scss';
 
 function App() {
-    const [agility, setAgility] = useState(255);
-    const [intellect, setIntellect] = useState(250);
-    const [power, setPower] = useState(260);
-    const [strength, setStrength] = useState(260);
-    const [will, setWill] = useState(250);
+    const [agility, setAgility] = useState(MAX_BASE_AGILITY);
+    const [intellect, setIntellect] = useState(MAX_BASE_INTELLECT);
+    const [power, setPower] = useState(MAX_BASE_POWER);
+    const [strength, setStrength] = useState(MAX_BASE_STRENGTH);
+    const [will, setWill] = useState(MAX_BASE_WILL);
 
     const [page, setPage] = useState("Base");
 
