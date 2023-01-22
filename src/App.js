@@ -11,7 +11,8 @@ import {
     MAX_SELFISH_STRENGTH,
     MAX_BASE_WILL,
     MAX_SELFISH_WILL,
-    MAX_TOTAL
+    MAX_TOTAL,
+    DISCORD_BOT_INVITE_LINK
 } from "./util/constants";
 import Icon from './components/icon/Icon';
 import logo from "./images/gamma.png";
@@ -60,7 +61,7 @@ function App() {
             <div className = "header">
                 <img className = "logo" src = {logo} alt = "logo"/>
                 Gamma Stats
-                <a className = "header-button" href = "https://discord.com/api/oauth2/authorize?client_id=743944201682681937&permissions=354368&scope=bot" target = "_blank" rel = "noreferrer">
+                <a className = "header-button" href = {DISCORD_BOT_INVITE_LINK} target = "_blank" rel = "noreferrer">
                     <Button>
                         <Icon className = "header-icon" icon = "discord" size = "md"/>
                         Add to Discord
